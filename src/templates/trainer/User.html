@@ -1,0 +1,36 @@
+{% extends 'indextrainer.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-borderless table-hover" id="customers" >
+    <tr>
+      <!--<td width="87"><div align="center">User id </div></td>-->
+      <th> Name</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Heigth</th>
+      <th>Weigth</th>
+      <th>Health disrciption</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['FIRST_NAME']}} {{i['LAST_NAME']}}</td>
+      <td>&nbsp;{{i['GENDER']}}</td>
+      <td>&nbsp;{{i['DOB']}}</td>
+      <td>&nbsp;{{i['PHONE']}}</td>
+      <td>&nbsp;{{i['EMAIL']}}</td>
+      <td>&nbsp;{{i['HEIGHT']}}</td>
+      <td>&nbsp;{{i['WEIGHT']}}</td>
+      <td>&nbsp;{{i['HEALTH_DISCRIPTION']}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+
+{% endblock %}
+

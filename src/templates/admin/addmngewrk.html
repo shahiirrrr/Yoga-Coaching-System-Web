@@ -1,0 +1,31 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addwork#abt">
+  <table width="610" height="203" border="1" id="customers" class="table table-hover">
+    <tr>
+      <th>WORK</th>
+      <th>DETAILS</th>
+      <th>DATE</th>
+      <th> </th>
+      <!--<td width="120"><div align="center">STATUS</div></td>-->
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td height="91">&nbsp;{{i['WORKS']}}</td>
+      <td>&nbsp;{{i['DETAILS']}}</td>
+      <td>&nbsp;{{i['work_date']}}</td>
+      <!--<td>&nbsp;{{i['STATUS']}}</td>-->
+      <td><div align="center"><a class="btn btn-danger" href="deletework?eid={{i['WORK_ID']}}#abt">Delete</a></div></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td height="39" colspan="5"><div align="center">
+        <input type="submit" name="Submit" value="Add New" class="btn btn-success" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

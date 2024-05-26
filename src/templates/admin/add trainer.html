@@ -1,0 +1,57 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addtrainer1">
+  <table class="table table-hover">
+    <tr>
+      <td>First name </td>
+      <td ><input class="form-control" type="text" name="textfield"  required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>Last name </td>
+      <td><input class="form-control" type="text" name="textfield2"   required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input name="radiobutton" type="radio" value="Male"  checked/>
+      Male 
+        <input name="radiobutton" type="radio" value="Female" />
+      Female 
+      <input name="radiobutton" type="radio" value="Other" />
+      Other</td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><input class="form-control"  type="date" name="textfield8" min="1980-01-01" max="2019-12-31" title="OOPS!! the field is empty" required /></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input class="form-control"  type="text" name="textfield3" title="OOPS!! the field is empty" required pattern="[6789][0-9]{9}" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input class="form-control" type="text" name="textfield4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><input class="form-control"  type="text" name="textfield5" required/></td>
+    </tr>
+    <tr>
+      <td>User name </td>
+      <td><input class="form-control"  type="text" name="textfield6" required/></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+          <input class="form-control" type="password" name="textfield7" required/>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" name="Submit"  class="btn btn-success" value="Save" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

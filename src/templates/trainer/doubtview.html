@@ -1,0 +1,25 @@
+{% extends 'indextrainer.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="#abt">
+  <table class="table table-borderless table-hover" id="customers" >
+    <tr>
+      <th>USER NAME</th>
+      <th>DOUBT</th>
+      <th>DATE</th>
+      <th> </th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td> {{i['FIRST_NAME']}} {{i['LAST_NAME']}}</td>
+      <td>&nbsp;{{i['DOUBT']}}</td>
+      <td>&nbsp;{{i['DATE']}}</td>
+      <td><a class="btn btn-primary"  href="doubtreply?id={{i['DOUBT_ID']}}">Reply</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+

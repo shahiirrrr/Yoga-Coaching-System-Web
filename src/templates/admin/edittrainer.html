@@ -1,0 +1,51 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="edittrainer1">
+  <table class="table table-hover">
+    <tr>
+      <td >First name </td>
+      <td><input class="form-control" type="text" name="textfield" value="{{val['FIRST_NAME']}}" required pattern="[A-Z a-z.]{3,25}" /></td>
+    </tr>
+    <tr>
+      <td>Last name </td>
+      <td><input class="form-control" type="text" name="textfield2" value="{{val['LAST_NAME']}}" required pattern="[A-Z a-z.]{1,25}" /></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input name="radiobutton" type="radio" value="Male" checked {% if val['GENDER']=='Male' %} checked {% endif %}/>
+      Male 
+        <input name="radiobutton" type="radio" value="Female" {% if val['Female']=='Male' %} checked {% endif %}/>
+      Female 
+      <input name="radiobutton" type="radio" value="Other" {% if val['Other']=='Male' %} checked {% endif %}/>
+      Other</td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><input class="form-control" type="date" name="textfield8" value="{{val['DOB']}}" min="1990-01-01" max="2019-12-31" required /></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input class="form-control" type="text" name="textfield3" value="{{val['PHONE']}}" required pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input class="form-control" type="text" name="textfield4" value="{{val['EMAIL']}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><input class="form-control" type="text" name="textfield5" value="{{val['QUALIFICATION']}}" required/></td>
+    </tr>
+
+
+    <tr>
+      <td colspan="2" align="center">
+        <input class="btn btn-primary" type="submit" name="Submit" value="Save" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

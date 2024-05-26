@@ -1,0 +1,22 @@
+{% extends 'indextrainer.html' %}
+{% block body %}
+
+<body>
+<form action="Addvideo1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-hover">
+    <tr>
+      <td>Video</td>
+      <td><input class="form-control"  type="file" name="file" required /></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input class="form-control"  type="text" name="textfield" required /></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <input type="submit" name="Submit"  class="btn btn-success" value="Add"required  />
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

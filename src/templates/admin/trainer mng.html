@@ -1,0 +1,37 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-borderless table-hover" id="customers" >
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th >DOB</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Qualification</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{i['FIRST_NAME']}} {{i['LAST_NAME']}}</td>
+      <td>&nbsp;{{i['GENDER']}}</td>
+      <td>&nbsp;{{i['DOB']}}</td>
+      <td>&nbsp;{{i['PHONE']}}</td>
+      <td>&nbsp;{{i['EMAIL']}}</td>
+      <td>&nbsp;{{i['QUALIFICATION']}}</td>
+          <td><a class="btn btn-info " href="edittrainer?eid={{i['LOGIN_ID']}}#abt">Edit</a></td>
+          <td><a class="btn btn-danger" href="deletetrainer?eid={{i['LOGIN_ID']}}#abt" >Delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="9" align="center"><a href="addtrainer#abt" class="btn btn-success">Add</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+

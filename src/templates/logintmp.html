@@ -1,0 +1,31 @@
+{% extends 'indexlogin.html' %}
+{% block body %}
+
+<body><form action="login#abt" method="post">
+<div class="login-form">
+			<div class="top-login">
+				<span><img src="images/group.png" alt=""/></span>
+			</div>
+			<h1>Login</h1>
+			<div class="login-top">
+			<form>
+				<div class="login-ic">
+					<i ></i>
+					<input type="text"  value="Username" onFocus="this.value = '';onBlur="if (this.value == '') {this.value = 'User name';}"/>
+					<div class="clear"> </div>
+				</div>
+				<div class="login-ic">
+					<i class="icon"></i>
+					<input type="password"  value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'password';}"/>
+					<div class="clear"> </div>
+				</div>
+			
+				<div class="log-bwn">
+					<input type="submit"  value="LOGIN" > <a href="/startcam">Start Cam</a>
+				</div>
+				</form>
+			</div>
+</div>	
+</form>
+</body>
+{% endblock %}

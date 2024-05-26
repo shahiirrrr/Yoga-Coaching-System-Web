@@ -1,0 +1,35 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="#abt">
+  <table class="table table-hover"  id="customers" >
+    <tr>
+      <th>USER NAME</th>
+      <th>COMPLAINT</th>
+      <th>DATE</th>
+      <th>TARINER NAME</th>
+      <th>&nbsp;</th>
+    </tr>
+    {% for i in val %}
+
+    <tr>
+      <td height="59">&nbsp;{{ i['ufname'] }} {{ i['ulname'] }}</td>
+      <td>&nbsp;{{ i['COMPLAINT'] }}</td>
+      <td>&nbsp;{{ i['DATE'] }}</td>
+      <td>&nbsp;{{ i['FIRST_NAME'] }} {{ i['LAST_NAME'] }}</td>
+      {% if i['REPLY']=='pending' %}
+         <td><a href="send_reply?id={{ i['COMPLAINT_ID'] }}#abt">Reply</a></div></td>
+      {% else %}
+         <td>{{ i['REPLY'] }}</td>
+      {% endif %}
+
+    </tr>
+
+
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

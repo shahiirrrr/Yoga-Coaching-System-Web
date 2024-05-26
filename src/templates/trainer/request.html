@@ -1,0 +1,37 @@
+{% extends 'indextrainer.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-borderless table-hover" id="customers" >
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Health</th>
+      <th>Date</th>
+
+      <th></th>
+    </tr>
+     {% for i in val %}
+    <tr>
+      <td> {{i['FIRST_NAME']}}  {{i['LAST_NAME']}}</td>
+      <td>&nbsp;{{i['GENDER']}}</td>
+      <td> {{i['DOB']}}</td>
+      <td> {{i['HEIGHT']}}</td>
+      <td>&nbsp;{{i['WEIGHT']}}</td>
+      <td>&nbsp;{{i['HEALTH_DISCRIPTION']}}</td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td>{% if i['status']=="pending" %}<a href="acceptrequest?id={{i['rid']}}">accept</a>
+      <p><a href="rejectrequest?id={{i['rid']}}">reject</a></p>{% elif i['status']=="accepted" %} Accepted <a href="cancelrequest?id={{i['rid']}}">Cancel</a> {% else %} Rejected {% endif %}</td>
+
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}
+

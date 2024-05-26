@@ -1,0 +1,38 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body><form action="#abt" method="post">
+  <table class="table table-borderless table-hover" id="customers" >
+    <tr>
+      <th>NAME</th>
+      <th>GENDER</th>
+      <th>DOB</th>
+      <th>PHONE</th>
+      <th>EMAIL</th>
+      <th>HEIGTH</th>
+      <th>WEIGTH</th>
+      <th>HEALTH DISCRIPTION</th>
+      <th> &nbsp;</th>
+    </tr>
+        {% for i in val %}
+    <tr>
+      <td> {{i['FIRST_NAME']}}  {{i['LAST_NAME']}}</td>
+      <td>&nbsp;{{i['GENDER']}}</td>
+      <td> {{i['DOB']}}</td>
+      <td> {{i['PHONE']}}</td>
+      <td>&nbsp;{{i['EMAIL']}}</td>
+      <td>&nbsp;{{i['HEIGHT']}}</td>
+      <td>&nbsp;{{i['WEIGHT']}}</td>
+      <td> {{i['HEALTH_DISCRIPTION']}}</td>
+          {% if i['TYPE'] == 'user' %}
+          <td><a class="btn btn-danger" href="block_user?id={{ i['LOGIN_ID'] }}#abt">Block</a></td>
+          {% else %}
+          <td><a class="btn btn-success" href="unblock_user?id={{ i['LOGIN_ID'] }}#abt">Unblock</a></td>
+          {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

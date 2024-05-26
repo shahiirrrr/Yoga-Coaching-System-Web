@@ -1,0 +1,36 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/assignwork1">
+  <table class="table table-borderless table-hover" id="customers" >
+    <tr>
+      <td  input class="form-control" width="239">TRAINER</td>
+      <td width="285"><div align="center">
+        <select name="select" >
+          {% for i in val %}
+
+          <option value={{i['LOGIN_ID']}}> {{i['FIRST_NAME']}} {{i['LAST_NAME']}}</option>
+          {% endfor %}
+        </select>
+      </div></td>
+    </tr>
+    <tr>
+      <td input class="form-control">WORK</td>
+      <td><div align="center">
+        <select name="select2" >
+           {% for d in val1 %}
+          <option value={{d['WORK_ID']}}> {{d['WORKS']}} </option>
+          {% endfor %}
+        </select>
+      </div></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input class="btn btn-primary" type="submit" name="Submit" value="Save" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

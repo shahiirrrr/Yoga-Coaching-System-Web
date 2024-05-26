@@ -1,0 +1,25 @@
+{% extends 'indextrainer.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover"  id="customers" >
+    <tr>
+      <th>WORK</th>
+      <th>DETAILS</th>
+      <th>STATUS</th>
+      <th></th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['WORKS']}}</td>
+      <td>&nbsp;{{i['DETAILS']}}</td>
+      <td>&nbsp;{{i['STATUS']}}</td>
+      <td><a href="updatestatus?id={{i['ASSIGNEDWORK_ID']}}#abt">Update Status</a> </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+
